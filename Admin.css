@@ -1,22 +1,30 @@
 /* =========================================================
    EGrocery - Admin Panel Design System
-   Separate theme from the Customer site (deep blue / ERP style),
-   used by every Admin page via _AdminLayout.cshtml.
+   Same brand family as Customer.css (green brand), but a
+   deeper "professional dashboard" shade for admin context.
+   Radius, shadow, font-family kept IDENTICAL to Customer.css
+   so both sides feel like one product.
    ========================================================= */
 
 :root {
-    --adm-primary: #1a237e;
-    --adm-primary-light: #3949ab;
-    --adm-bg: #f4f6f9;
+    --adm-primary: #145c33;        /* same green family, deeper shade */
+    --adm-primary-light: #1B7A43;  /* = --eg-primary from Customer.css */
+    --adm-accent: #FFA000;         /* = --eg-accent from Customer.css */
+    --adm-bg: #F6FAF6;             /* = --eg-bg-light from Customer.css */
+    --adm-text-dark: #1F2A24;      /* = --eg-text-dark from Customer.css */
     --adm-sidebar-width: 230px;
-    --adm-radius: 8px;
-    --adm-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --adm-radius: 14px;            /* = --eg-radius from Customer.css */
+    --adm-radius-sm: 8px;
+    --adm-shadow: 0 3px 12px rgba(27,122,67,0.08);        /* = --eg-shadow */
+    --adm-shadow-hover: 0 10px 24px rgba(27,122,67,0.18); /* = --eg-shadow-hover */
 }
 
 body {
     background-color: var(--adm-bg);
-    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--adm-text-dark);
+    font-family: "Segoe UI", Arial, sans-serif;  /* same font as Customer.css */
     padding-top: 60px;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* ===== NAVBAR ===== */
@@ -28,7 +36,9 @@ body {
 }
 .admin-navbar-brand {
     color: var(--adm-primary) !important;
-    font-weight: bold;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.3px;
 }
 
 /* ===== LAYOUT ===== */
@@ -48,7 +58,7 @@ body {
 }
 .admin-sidebar-brand {
     color: #fff;
-    font-weight: bold;
+    font-weight: 800;
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255,255,255,0.15);
     margin-bottom: 10px;
@@ -63,6 +73,7 @@ body {
     color: rgba(255,255,255,0.85);
     padding: 12px 20px;
     text-decoration: none;
+    transition: background 0.15s;
 }
 .admin-sidebar-menu li a:hover {
     background-color: var(--adm-primary-light);
@@ -71,14 +82,14 @@ body {
 .admin-sidebar-menu li.active a {
     background-color: var(--adm-primary-light);
     color: #fff;
-    font-weight: bold;
-    border-left: 4px solid #fff;
+    font-weight: 700;
+    border-left: 4px solid var(--adm-accent);
 }
 
 /* ===== CONTENT AREA ===== */
 .admin-content {
     margin-left: var(--adm-sidebar-width);
-    padding: 20px 25px;
+    padding: 25px 30px;
     width: 100%;
 }
 
@@ -87,40 +98,62 @@ body {
     background: #fff;
     border-radius: var(--adm-radius);
     box-shadow: var(--adm-shadow);
-    padding: 18px;
-    margin-bottom: 20px;
-    border-left: 4px solid var(--adm-primary);
-    transition: box-shadow 0.2s;
+    padding: 20px;
+    margin-bottom: 22px;
+    border-left: 4px solid var(--adm-primary-light);
+    border: 1px solid #EEF3EE;
+    border-left: 4px solid var(--adm-primary-light);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
-.adm-summary-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
-.adm-summary-card .adm-card-icon { font-size: 26px; color: var(--adm-primary); }
-.adm-summary-card .adm-card-count { font-size: 26px; font-weight: bold; margin: 5px 0; }
-.adm-summary-card .adm-card-title { color: #616161; font-size: 13px; text-transform: uppercase; }
+.adm-summary-card:hover {
+    box-shadow: var(--adm-shadow-hover);
+    transform: translateY(-3px);
+}
+.adm-summary-card .adm-card-icon { font-size: 26px; color: var(--adm-primary-light); }
+.adm-summary-card .adm-card-count { font-size: 26px; font-weight: 800; margin: 5px 0; color: var(--adm-text-dark); }
+.adm-summary-card .adm-card-title { color: #6B7A70; font-size: 13px; text-transform: uppercase; letter-spacing: 0.4px; }
 
 /* ===== SECTION CARDS (tables, charts, quick actions) ===== */
 .adm-section-card {
     background: #fff;
     border-radius: var(--adm-radius);
     box-shadow: var(--adm-shadow);
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 22px;
+    margin-bottom: 22px;
+    border: 1px solid #EEF3EE;
 }
-.adm-section-card h4 { margin-top: 0; color: var(--adm-primary); }
+.adm-section-card h4 { margin-top: 0; color: var(--adm-primary); font-weight: 800; }
 
 /* ===== SIMPLE SERVER-RENDERED BAR CHART ===== */
 .adm-bar-row { margin-bottom: 12px; }
 .adm-bar-label { font-size: 13px; margin-bottom: 3px; }
-.adm-bar-track { background: #e0e0e0; border-radius: 4px; height: 16px; overflow: hidden; }
-.adm-bar-fill { background: var(--adm-primary); height: 100%; }
+.adm-bar-track { background: #EEF3EE; border-radius: 4px; height: 16px; overflow: hidden; }
+.adm-bar-fill { background: var(--adm-primary-light); height: 100%; }
 
 /* ===== QUICK ACTIONS ===== */
-.adm-quick-btn { margin: 5px; }
+.adm-quick-btn {
+    margin: 5px;
+    border-radius: var(--adm-radius-sm);
+    font-weight: 600;
+}
+
+/* ===== BUTTONS (match Customer.css behavior) ===== */
+.btn { transition: all 0.15s ease-in-out; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.12); }
+.btn-primary, .adm-btn-primary {
+    background-color: var(--adm-primary-light);
+    border-color: var(--adm-primary-light);
+}
+.btn-primary:hover, .adm-btn-primary:hover {
+    background-color: var(--adm-primary);
+    border-color: var(--adm-primary);
+}
 
 /* ===== FOOTER ===== */
 .admin-footer {
     margin-left: var(--adm-sidebar-width);
     padding: 15px;
-    color: #757575;
+    color: #6B7A70;
 }
 
 /* ===== RESPONSIVE ===== */
