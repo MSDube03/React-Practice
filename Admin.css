@@ -1,0 +1,131 @@
+/* =========================================================
+   EGrocery - Admin Panel Design System
+   Separate theme from the Customer site (deep blue / ERP style),
+   used by every Admin page via _AdminLayout.cshtml.
+   ========================================================= */
+
+:root {
+    --adm-primary: #1a237e;
+    --adm-primary-light: #3949ab;
+    --adm-bg: #f4f6f9;
+    --adm-sidebar-width: 230px;
+    --adm-radius: 8px;
+    --adm-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body {
+    background-color: var(--adm-bg);
+    font-family: "Segoe UI", Arial, sans-serif;
+    padding-top: 60px;
+}
+
+/* ===== NAVBAR ===== */
+.admin-navbar {
+    background-color: #fff;
+    border: none;
+    box-shadow: var(--adm-shadow);
+    z-index: 1030;
+}
+.admin-navbar-brand {
+    color: var(--adm-primary) !important;
+    font-weight: bold;
+}
+
+/* ===== LAYOUT ===== */
+.admin-body-wrapper {
+    display: flex;
+}
+
+/* ===== SIDEBAR ===== */
+.admin-sidebar {
+    width: var(--adm-sidebar-width);
+    background-color: var(--adm-primary);
+    min-height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding-top: 10px;
+}
+.admin-sidebar-brand {
+    color: #fff;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 10px;
+}
+.admin-sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.admin-sidebar-menu li a {
+    display: block;
+    color: rgba(255,255,255,0.85);
+    padding: 12px 20px;
+    text-decoration: none;
+}
+.admin-sidebar-menu li a:hover {
+    background-color: var(--adm-primary-light);
+    color: #fff;
+}
+.admin-sidebar-menu li.active a {
+    background-color: var(--adm-primary-light);
+    color: #fff;
+    font-weight: bold;
+    border-left: 4px solid #fff;
+}
+
+/* ===== CONTENT AREA ===== */
+.admin-content {
+    margin-left: var(--adm-sidebar-width);
+    padding: 20px 25px;
+    width: 100%;
+}
+
+/* ===== SUMMARY CARDS ===== */
+.adm-summary-card {
+    background: #fff;
+    border-radius: var(--adm-radius);
+    box-shadow: var(--adm-shadow);
+    padding: 18px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--adm-primary);
+    transition: box-shadow 0.2s;
+}
+.adm-summary-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+.adm-summary-card .adm-card-icon { font-size: 26px; color: var(--adm-primary); }
+.adm-summary-card .adm-card-count { font-size: 26px; font-weight: bold; margin: 5px 0; }
+.adm-summary-card .adm-card-title { color: #616161; font-size: 13px; text-transform: uppercase; }
+
+/* ===== SECTION CARDS (tables, charts, quick actions) ===== */
+.adm-section-card {
+    background: #fff;
+    border-radius: var(--adm-radius);
+    box-shadow: var(--adm-shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.adm-section-card h4 { margin-top: 0; color: var(--adm-primary); }
+
+/* ===== SIMPLE SERVER-RENDERED BAR CHART ===== */
+.adm-bar-row { margin-bottom: 12px; }
+.adm-bar-label { font-size: 13px; margin-bottom: 3px; }
+.adm-bar-track { background: #e0e0e0; border-radius: 4px; height: 16px; overflow: hidden; }
+.adm-bar-fill { background: var(--adm-primary); height: 100%; }
+
+/* ===== QUICK ACTIONS ===== */
+.adm-quick-btn { margin: 5px; }
+
+/* ===== FOOTER ===== */
+.admin-footer {
+    margin-left: var(--adm-sidebar-width);
+    padding: 15px;
+    color: #757575;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .admin-sidebar { position: static; width: 100%; min-height: auto; }
+    .admin-body-wrapper { flex-direction: column; }
+    .admin-content, .admin-footer { margin-left: 0; }
+}

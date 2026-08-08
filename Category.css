@@ -1,0 +1,29 @@
+/* =========================================================
+   Category Management specific styles - loaded on top of Admin.css.
+   ========================================================= */
+
+.adm-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.adm-cat-thumb {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.adm-cat-thumb-large {
+    width: 100%;
+    max-width: 220px;
+    border-radius: var(--adm-radius);
+    box-shadow: var(--adm-shadow);
+}
+
+.adm-action-buttons .btn { margin-right: 4px; margin-bottom: 4px; }
+.adm-inline-form { display: inline-block; }
+
+.adm-form-card { max-width: 600px; }

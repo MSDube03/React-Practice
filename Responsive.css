@@ -1,0 +1,21 @@
+/* =========================================================
+   Responsive tweaks - Desktop, Laptop, Tablet, Mobile.
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .eg-section { padding: 20px; }
+    .eg-search-form { width: 220px; }
+    .eg-hero-carousel .item img { height: 280px; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    body { padding-top: 60px; }
+    .eg-section { padding: 15px; }
+    .eg-search-form { width: 100%; margin: 10px 0; }
+    .eg-hero-carousel .item img { height: 200px; }
+    .eg-summary-box { position: static; margin-top: 20px; }
+    .eg-sort-bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .eg-sort-select { width: 100%; }
+}

@@ -1,0 +1,73 @@
+/* ===== PRODUCT CARD (Home, Product List, Related Products) ===== */
+.eg-product-card {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.eg-product-card:hover {
+    box-shadow: var(--eg-shadow-hover);
+    transform: translateY(-3px);
+}
+.eg-product-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+.eg-product-body { padding: 12px; }
+.eg-product-name {
+    display: block;
+    font-weight: bold;
+    color: var(--eg-text-dark);
+    margin-bottom: 4px;
+}
+.eg-product-price { font-size: 16px; font-weight: bold; color: var(--eg-primary-dark); margin: 4px 0; }
+.eg-product-rating { font-size: 13px; color: #757575; margin-bottom: 8px; }
+.eg-product-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* ===== PRODUCT DETAILS PAGE ===== */
+.eg-detail-img {
+    width: 100%;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+}
+.eg-detail-price { color: var(--eg-primary-dark); margin: 10px 0; }
+.eg-detail-rating { color: #757575; }
+.eg-in-stock { color: var(--eg-primary); font-weight: bold; }
+.eg-out-of-stock { color: var(--eg-danger); font-weight: bold; }
+.eg-detail-actions { margin-top: 15px; }
+.eg-detail-actions .btn { margin-right: 10px; }
+
+/* ===== FILTER SIDEBAR ===== */
+.eg-filter-box {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 20px;
+}
+.eg-filter-heading { margin-top: 15px; margin-bottom: 5px; font-size: 14px; font-weight: bold; }
+.eg-filter-btn { margin-top: 15px; margin-bottom: 8px; }
+
+/* ===== SORT BAR ===== */
+.eg-sort-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+.eg-sort-select { width: 200px; display: inline-block; }
+
+/* ===== PAGINATION ===== */
+.eg-pagination { margin-top: 20px; }
+.eg-pagination > .active > a {
+    background-color: var(--eg-primary);
+    border-color: var(--eg-primary);
+}
+.eg-pagination > li > a { color: var(--eg-primary-dark); }

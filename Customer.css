@@ -1,0 +1,307 @@
+:root {
+    --eg-primary: #2e7d32;       
+    --eg-primary-dark: #1b5e20;
+    --eg-accent: #ffb300;        
+    --eg-bg-light: #f1f8e9;      
+    --eg-text-dark: #263238;
+    --eg-danger: #c62828;
+    --eg-radius: 8px;
+    --eg-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --eg-shadow-hover: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+body {
+    background-color: var(--eg-bg-light);
+    color: var(--eg-text-dark);
+    font-family: "Segoe UI", Arial, sans-serif;
+    padding-top: 70px; 
+}
+
+/* ===== NAVBAR ===== */
+.eg-navbar {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: var(--eg-shadow);
+}
+.eg-brand {
+    color: var(--eg-primary) !important;
+    font-weight: bold;
+    font-size: 22px;
+}
+.eg-navbar .nav > li > a {
+    color: var(--eg-text-dark);
+    font-weight: 500;
+}
+.eg-navbar .nav > li.active > a {
+    color: var(--eg-primary) !important;
+    font-weight: bold;
+    border-bottom: 2px solid var(--eg-primary);
+}
+.eg-search-form {
+    width: 320px;
+}
+
+/* ===== BUTTONS (used on every page) ===== */
+.eg-btn-primary {
+    background-color: var(--eg-primary);
+    border-color: var(--eg-primary);
+    color: #fff;
+    border-radius: var(--eg-radius);
+}
+.eg-btn-primary:hover, .eg-btn-primary:focus {
+    background-color: var(--eg-primary-dark);
+    border-color: var(--eg-primary-dark);
+    color: #fff;
+}
+.eg-btn-outline {
+    background-color: #fff;
+    border: 1px solid var(--eg-primary);
+    color: var(--eg-primary);
+    border-radius: var(--eg-radius);
+}
+.eg-btn-outline:hover, .eg-btn-outline:focus {
+    background-color: var(--eg-bg-light);
+    color: var(--eg-primary-dark);
+}
+
+/* ===== ALERTS / TOASTS ===== */
+.eg-alert-container {
+    margin-top: 15px;
+}
+
+/* ===== PAGE SECTIONS ===== */
+.eg-section {
+    padding: 25px 40px;
+}
+.eg-section-title {
+    margin: 25px 0 15px 0;
+    font-weight: bold;
+    color: var(--eg-primary-dark);
+    border-left: 4px solid var(--eg-primary);
+    padding-left: 10px;
+}
+
+/* ===== HERO CAROUSEL ===== */
+.eg-hero-carousel .item img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+.eg-hero-carousel .carousel-caption h2 {
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ===== CATEGORY CARDS (Home strip) ===== */
+.eg-category-card-link { text-decoration: none; }
+.eg-category-card {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.eg-category-card:hover {
+    box-shadow: var(--eg-shadow-hover);
+    transform: translateY(-3px);
+}
+.eg-category-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.eg-category-card h5 {
+    color: var(--eg-text-dark);
+    margin: 0;
+}
+
+/* ===== CATEGORY CARDS (full Categories page) ===== */
+.eg-category-card-large {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.eg-category-card-large:hover {
+    box-shadow: var(--eg-shadow-hover);
+    transform: translateY(-3px);
+}
+.eg-category-card-large img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* ===== BADGES ===== */
+.eg-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--eg-primary);
+    color: #fff;
+}
+.eg-badge-new { background-color: var(--eg-accent); color: #333; position: absolute; margin: 8px; }
+.eg-badge-outofstock { background-color: var(--eg-danger); position: absolute; margin: 8px; }
+.eg-badge-count { background-color: var(--eg-primary-dark); }
+.eg-badge-default { background-color: var(--eg-accent); color: #333; float: right; }
+
+/* ===== EMPTY STATES ===== */
+.eg-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    margin-top: 20px;
+}
+
+/* ===== FORM / DETAIL CARDS (Address, Order, Profile) ===== */
+.eg-form-card {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+.eg-summary-box {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 20px;
+    position: sticky;
+    top: 90px;
+}
+
+/* ===== OFFER BANNER ===== */
+.eg-offer-banner {
+    background: linear-gradient(90deg, var(--eg-primary), var(--eg-primary-dark));
+    color: #fff;
+    border-radius: var(--eg-radius);
+    padding: 20px 30px;
+    margin: 25px 0;
+}
+.eg-offer-banner h3 { margin-top: 0; }
+
+/* ===== FOOTER ===== */
+.eg-footer {
+    background-color: #263238;
+    color: #cfd8dc;
+    padding: 30px 40px 15px 40px;
+    margin-top: 40px;
+}
+.eg-footer h4 { color: #fff; }
+.eg-footer a { color: #cfd8dc; }
+.eg-footer a:hover { color: #fff; text-decoration: none; }
+
+/* ===== INLINE FORMS (Add to Cart / Wishlist buttons sitting side by side) ===== */
+.eg-inline-form { display: inline-block; margin: 2px; }
+
+.eg-page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.eg-main-content {
+    flex: 1 0 auto;
+    padding-top: 95px; /* space below the fixed navbar */
+}
+.eg-footer {
+    flex-shrink: 0;
+    background-color: #263238;
+    color: #cfd8dc;
+    padding: 25px 30px 12px 30px;
+}
+.eg-footer h4 { color: #fff; }
+.eg-footer a { color: #cfd8dc; }
+.eg-footer a:hover { color: #fff; text-decoration: none; }
+
+/* ---- Header Row 1 ---- */
+.eg-topbar {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    margin-bottom: 0;
+}
+.eg-brand {
+    color: #1B7A43 !important;
+    font-weight: 700;
+    font-size: 22px;
+}
+.eg-search-center {
+    max-width: 420px;
+    margin: 8px auto;
+    float: none;
+}
+@media (min-width: 768px) {
+    .eg-search-center { position: absolute; left: 50%; transform: translateX(-50%); top: 8px; }
+}
+
+.eg-icon-counts {
+    position: absolute;
+    right: 220px;
+    top: 14px;
+}
+.eg-count-pill {
+    display: inline-block;
+    background: #f1f8e9;
+    color: #1B7A43;
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-left: 6px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.eg-count-pill:hover {
+    background: #dcedc8;
+    color: #156134;
+    text-decoration: none;
+}
+
+/* ---- Header Row 2: category/page links bar ---- */
+.eg-catbar {
+    background-color: #f1f8e9;
+    border-top: 1px solid #dcedc8;
+}
+.eg-catbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+.eg-catbar-nav > li > a {
+    padding: 8px 16px;
+    color: #33691e;
+    font-weight: 500;
+}
+.eg-catbar-nav > li.active > a,
+.eg-catbar-nav > li > a:hover {
+    color: #1B7A43;
+    font-weight: 700;
+    background: none;
+    border-bottom: 2px solid #1B7A43;
+}
+
+.btn {
+    transition: all 0.15s ease-in-out;
+}
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.btn-success {
+    background-color: #1B7A43;
+    border-color: #1B7A43;
+}
+.btn-success:hover {
+    background-color: #156134;
+    border-color: #156134;
+}

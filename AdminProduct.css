@@ -1,0 +1,22 @@
+/* =========================================================
+   Product Management specific styles - loaded on top of Admin.css
+   and Category.css.
+
+   NAMED "AdminProduct.css", NOT "Product.css" - your Customer Module
+   already has a Content/CSS/Product.css file from Stage 2. Since both
+   Admin and Customer share the same physical Content/CSS/ folder in
+   your project, a second file also named "Product.css" would either
+   fail to copy in (file already exists) or silently overwrite your
+   working Customer styling. Naming this one distinctly avoids that
+   collision entirely.
+   ========================================================= */
+
+/* Most of the table/thumbnail/badge styling is already shared from
+   Category.css (adm-cat-table, adm-cat-thumb, adm-action-buttons, etc.)
+   - Product Management reuses those classes directly. Only a couple of
+   Product-specific tweaks are needed here. */
+
+.adm-form-card .help-block {
+    font-size: 12px;
+    color: #757575;
+}

@@ -1,0 +1,8 @@
+/* =========================================================
+   Cart & Wishlist specific styles.
+   ========================================================= */
+
+.eg-cart-table { background: #fff; border-radius: var(--eg-radius); box-shadow: var(--eg-shadow); }
+.eg-cart-thumb { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 10px; }
+.eg-qty-control { display: flex; align-items: center; gap: 8px; }
+.eg-qty-value { font-weight: bold; min-width: 20px; text-align: center; display: inline-block; }

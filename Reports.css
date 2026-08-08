@@ -1,0 +1,18 @@
+/* =========================================================
+   Reports page specific styles - loaded on top of Admin.css.
+   Most of the Reports page reuses classes already defined
+   (adm-section-card, adm-summary-card, adm-bar-row/track/fill) -
+   only a couple of report-specific tweaks live here.
+   ========================================================= */
+
+.adm-section-card h4 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Slightly smaller summary cards work better packed 6-across on the
+   Sales Report row than the default Dashboard sizing. */
+.adm-section-card .adm-summary-card .adm-card-count {
+    font-size: 20px;
+}

@@ -1,0 +1,28 @@
+/* =========================================================
+   Checkout, Order Confirmation, Order History, Order Details.
+   ========================================================= */
+
+.eg-address-option {
+    border: 1px solid #dcedc8;
+    border-radius: var(--eg-radius);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+}
+.eg-confirmation-box {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 30px;
+    margin: 20px 0;
+}
+.eg-confirmation-box h2 { color: var(--eg-primary); }
+.eg-order-table { background: #fff; border-radius: var(--eg-radius); box-shadow: var(--eg-shadow); }
+.eg-address-card {
+    background: #fff;
+    border-radius: var(--eg-radius);
+    box-shadow: var(--eg-shadow);
+    padding: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.eg-address-actions { margin-top: 10px; }
