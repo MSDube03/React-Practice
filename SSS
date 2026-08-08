@@ -1,0 +1,113 @@
+@using EGroceryStore.Models
+@{
+    ViewBag.Title = "Home";
+    ViewBag.ActiveMenu = "Home";
+
+    // Poore page mein niche istemal karne ke liye ViewBag values ko
+    // properly-typed local variables mein daal rahe hain - isse code
+    // padhna aasan hota hai (baar baar "(List<...>)ViewBag.XYZ" likhne
+    // ke bajaye).
+    List<Category> categories = ViewBag.Categories;
+    List<Product> featuredProducts = ViewBag.FeaturedProducts;
+    List<Product> recentProducts = ViewBag.RecentProducts;
+    List<Product> bestSellingProducts = ViewBag.BestSellingProducts;
+    List<Coupon> activeCoupons = ViewBag.ActiveCoupons;
+}
+
+<div class="container-fluid eg-home-wrap">
+    <div class="row">
+
+        <!-- ===================== LEFT: CATEGORY SIDEBAR (shared partial) ===================== -->
+        <div class="col-md-2 col-sm-12">
+            @Html.Partial("~/Views/Shared/_CategorySidebar.cshtml", categories)
+        </div>
+
+        <!-- ===================== RIGHT: MAIN CONTENT ===================== -->
+        <div class="col-md-10">
+
+            <!-- Banner Carousel - static files, NOT database-driven.
+                 File names must exist in Content/Images/Banners/ -->
+            <div id="egCarousel" class="carousel slide eg-home-carousel" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#egCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#egCarousel" data-slide-to="1"></li>
+                    <li data-target="#egCarousel" data-slide-to="2"></li>
+                    <li data-target="#egCarousel" data-slide-to="3"></li>
+                    <li data-target="#egCarousel" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="@Url.Content("~/Content/Images/Banners/banner-fruits.jpg")" alt="Fresh Fruits" />
+                    </div>
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/Images/Banners/banner-vegetables.jpg")" alt="Fresh Vegetables" />
+                    </div>
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/Images/Banners/banner-organic.jpg")" alt="Organic Products" />
+                    </div>
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/Images/Banners/banner-dairy.jpg")" alt="Dairy Products" />
+                    </div>
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/Images/Banners/banner-essentials.jpg")" alt="Daily Essentials" />
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#egCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#egCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+
+            <!-- Shop by Category (icon strip) -->
+            <div class="eg-section-title">Shop by Category</div>
+            <div class="eg-catstrip">
+                @foreach (var cat in categories)
+                {
+                    <a href="@Url.Action("Index", "Category", new { id = cat.CategoryId })" class="eg-catstrip-item">
+                        <img src="@Url.Content("~/Content/Images/Categories/" + cat.ImagePath)" alt="@cat.CategoryName" />
+                        <span>@cat.CategoryName</span>
+                    </a>
+                }
+            </div>
+
+            <!-- Special Offers - highlighted -->
+            @if (activeCoupons != null && activeCoupons.Count > 0)
+            {
+                <div class="eg-offers-banner">
+                    <span class="glyphicon glyphicon-gift"></span>
+                    <strong>Special Offers:</strong>
+                    @foreach (var coupon in activeCoupons)
+                    {
+                        <span class="eg-offer-chip">Use code <strong>@coupon.CouponCode</strong> to get @coupon.CouponCode off</span>
+                    }
+                </div>
+            }
+
+            <!-- Featured Products -->
+            <div class="eg-section-title">Featured Products</div>
+            <div class="row eg-product-grid eg-home-grid">
+                @foreach (var product in featuredProducts)
+                {
+                    @Html.Partial("~/Views/Shared/_ProductCard.cshtml", product)
+                }
+            </div>
+
+            <!-- Recently Added -->
+            <div class="eg-section-title">Recently Added</div>
+            <div class="row eg-product-grid eg-home-grid">
+                @foreach (var product in recentProducts)
+                {
+                    @Html.Partial("~/Views/Shared/_ProductCard.cshtml", product)
+                }
+            </div>
+
+            <!-- Best Selling -->
+            <div class="eg-section-title">Best Selling</div>
+            <div class="row eg-product-grid eg-home-grid">
+                @foreach (var product in bestSellingProducts)
+                {
+                    @Html.Partial("~/Views/Shared/_ProductCard.cshtml", product)
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
